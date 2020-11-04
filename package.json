@@ -3,10 +3,6 @@
     "description": "`escodegen` fork for `javascript-obfuscator``",
     "homepage": "http://github.com/estools/escodegen",
     "main": "escodegen.js",
-    "bin": {
-        "esgenerate": "./bin/esgenerate.js",
-        "escodegen": "./bin/escodegen.js"
-    },
     "files": [
         "LICENSE.BSD",
         "README.md",
@@ -14,7 +10,7 @@
         "escodegen.js",
         "package.json"
     ],
-    "version": "2.1.0",
+    "version": "2.1.1",
     "engines": {
         "node": ">=6.0"
     },
