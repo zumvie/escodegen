@@ -1,3 +1,7 @@
+v2.1.1
+---
+* Removed `bin` section from `package.json`
+
 v2.1.0
 ---
 * Created the fork of `escodegen` for `javascript-obfuscator` package
