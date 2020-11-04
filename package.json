@@ -1,6 +1,6 @@
 {
-    "name": "escodegen",
-    "description": "ECMAScript code generator",
+    "name": "@javascript-obfuscator/escodegen",
+    "description": "`escodegen` fork for `javascript-obfuscator``",
     "homepage": "http://github.com/estools/escodegen",
     "main": "escodegen.js",
     "bin": {
@@ -14,7 +14,7 @@
         "escodegen.js",
         "package.json"
     ],
-    "version": "2.0.0",
+    "version": "2.1.0",
     "engines": {
         "node": ">=6.0"
     },
@@ -23,6 +23,11 @@
             "name": "Yusuke Suzuki",
             "email": "utatane.tea@gmail.com",
             "web": "http://github.com/Constellation"
+        },
+        {
+            "name": "Timofey Kachalov",
+            "email": "sanex3339@yandex.ru",
+            "web": "https://github.com/sanex3339"
         }
     ],
     "repository": {
@@ -54,9 +59,6 @@
     "scripts": {
         "test": "gulp travis",
         "unit-test": "gulp test",
-        "lint": "gulp lint",
-        "release": "node tools/release.js",
-        "build-min": "./node_modules/.bin/cjsify -ma path: tools/entry-point.js > escodegen.browser.min.js",
-        "build": "./node_modules/.bin/cjsify -a path: tools/entry-point.js > escodegen.browser.js"
+        "lint": "gulp lint"
     }
 }

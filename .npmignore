@@ -1,5 +1,6 @@
 npm-debug.log
 .DS_Store
+.idea
 .vimrc.local
 t.js
 esprima.js
