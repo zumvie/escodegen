@@ -61,7 +61,7 @@
         FORMAT_MINIFY,
         FORMAT_DEFAULTS;
 
-    estraverse = require('estraverse');
+    estraverse = require('@javascript-obfuscator/estraverse');
     esutils = require('esutils');
 
     Syntax = {
