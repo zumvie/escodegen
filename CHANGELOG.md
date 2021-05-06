@@ -1,3 +1,7 @@
+v2.2.0
+---
+* Added support for ES2022 class fields and private properties
+
 v2.1.1
 ---
 * Removed `bin` section from `package.json`

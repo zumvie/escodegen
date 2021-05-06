@@ -64,7 +64,7 @@
         FORMAT_MINIFY,
         FORMAT_DEFAULTS;
 
-    estraverse = require('estraverse');
+    estraverse = require('@javascript-obfuscator/estraverse');
     esutils = require('esutils');
 
     Syntax = estraverse.Syntax;
@@ -2188,6 +2188,10 @@
             return join(result, fragment);
         },
 
+        PrivateIdentifier: function (expr, precedence, flags) {
+            return '#' + generateIdentifier(expr);
+        },
+
         Property: function (expr, precedence, flags) {
             if (expr.kind === 'get' || expr.kind === 'set') {
                 return [
@@ -2217,6 +2221,27 @@
                 ':' + space,
                 this.generateExpression(expr.value, Precedence.Assignment, E_TTT)
             ];
+        },
+
+        PropertyDefinition: function (expr, precedence, flags) {
+            var result;
+
+            if (expr.static) {
+                result = ['static '];
+            } else {
+                result = [];
+            }
+
+            result.push(this.generatePropertyKey(expr.key, expr.computed));
+
+            if (expr.value) {
+                result.push( space + '=' + space);
+                result.push(this.generateExpression(expr.value, Precedence.Assignment, E_TTT));
+            }
+
+            result.push(this.semicolon(flags));
+
+            return result;
         },
 
         ObjectExpression: function (expr, precedence, flags) {
