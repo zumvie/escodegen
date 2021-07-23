@@ -1,3 +1,7 @@
+v2.2.1
+---
+* Fixed generation of private identifier names
+
 v2.2.0
 ---
 * Added support for ES2022 class fields and private properties

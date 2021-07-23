@@ -37,6 +37,7 @@ class C11 {
 }
 class C12 {
     #aaa;
+    #bbb = this.#aaa;
 }
 class C13 {
     #A;

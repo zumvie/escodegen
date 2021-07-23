@@ -860,7 +860,13 @@
     };
 
     function generateIdentifier(node) {
-        return toSourceNodeWhenNeeded(node.name, node);
+        var identifierName = node.name;
+
+        if (node.type === Syntax.PrivateIdentifier) {
+            identifierName = '#' + identifierName;
+        }
+
+        return toSourceNodeWhenNeeded(identifierName, node);
     }
 
     function generateAsyncPrefix(node, spaceRequired) {
@@ -2189,7 +2195,7 @@
         },
 
         PrivateIdentifier: function (expr, precedence, flags) {
-            return '#' + generateIdentifier(expr);
+            return generateIdentifier(expr);
         },
 
         Property: function (expr, precedence, flags) {
