@@ -10,7 +10,7 @@
         "escodegen.js",
         "package.json"
     ],
-    "version": "2.2.1",
+    "version": "2.2.2",
     "engines": {
         "node": ">=6.0"
     },

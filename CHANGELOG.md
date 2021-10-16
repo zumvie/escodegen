@@ -1,3 +1,7 @@
+v2.2.2
+---
+* Fixed precedence of `export default` IIFE
+* 
 v2.2.1
 ---
 * Fixed generation of private identifier names
