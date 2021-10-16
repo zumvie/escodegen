@@ -1914,7 +1914,7 @@
         },
 
         CallExpression: function (expr, precedence, flags) {
-            var result, i, iz;
+            var result, i, iz, isIIFE;
 
             // F_ALLOW_UNPARATH_NEW becomes false.
             result = [this.generateExpression(expr.callee, Precedence.Call, E_TTF)];
@@ -1936,7 +1936,11 @@
                 return ['(', result, ')'];
             }
 
-            return parenthesize(result, Precedence.Call, precedence);
+            isIIFE = expr.callee.id === null && expr.callee.params.length === 0;
+
+            return isIIFE
+                ? parenthesize(result, precedence, Precedence.Call)
+                : parenthesize(result, Precedence.Call, precedence);
         },
 
         ChainExpression: function (expr, precedence, flags) {

@@ -6,3 +6,5 @@ export default class A {
 }
 export default class {
 }
+export default (function () {
+}());
