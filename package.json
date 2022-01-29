@@ -10,7 +10,7 @@
         "escodegen.js",
         "package.json"
     ],
-    "version": "2.2.2",
+    "version": "2.3.0",
     "engines": {
         "node": ">=6.0"
     },
@@ -40,7 +40,7 @@
         "source-map": "~0.6.1"
     },
     "devDependencies": {
-        "acorn": "^8.2.2",
+        "acorn": "^8.7.0",
         "bluebird": "^3.4.7",
         "bower-registry-client": "^1.0.0",
         "chai": "^4.2.0",

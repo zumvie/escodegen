@@ -1506,6 +1506,13 @@
             return result;
         },
 
+        StaticBlock: function (stmt, flags) {
+            return [
+                'static' + space,
+                this.BlockStatement(stmt, flags)
+            ];
+        },
+
         ThrowStatement: function (stmt, flags) {
             return [join(
                 'throw',
