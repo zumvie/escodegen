@@ -13,3 +13,6 @@ class C11 { get; set; static; async }
 class C12 { #aaa; #bbb = this.#aaa; }
 class C13 { #\u0041; }
 class C14 { #𩸽; }
+
+class C15 { static aaa; static { C15.aaa = 1; } }
+class C16 { static { C15.aaa = 1; } static { C15.bbb = 2; } }
