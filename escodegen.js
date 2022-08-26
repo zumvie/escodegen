@@ -50,6 +50,7 @@
         hexadecimal,
         quotes,
         escapeless,
+        escapeScriptClosingTag,
         newline,
         space,
         parentheses,
@@ -190,6 +191,7 @@
                 hexadecimal: false,
                 quotes: 'single',
                 escapeless: false,
+                escapeScriptClosingTag: false,
                 compact: false,
                 parentheses: true,
                 semicolons: true,
@@ -2437,7 +2439,13 @@
             }
 
             if (typeof expr.value === 'string') {
-                return escapeString(expr.value);
+                var escapedString = escapeString(expr.value);
+
+                if (escapeScriptClosingTag) {
+                  return escapedString.split("</script>").join("<\\/script>");;
+                }
+
+                return escapedString;
             }
 
             if (typeof expr.value === 'number') {
@@ -2659,6 +2667,7 @@
         hexadecimal = json ? false : options.format.hexadecimal;
         quotes = json ? 'double' : options.format.quotes;
         escapeless = options.format.escapeless;
+        escapeScriptClosingTag = options.format.escapeScriptClosingTag;
         newline = options.format.newline;
         space = options.format.space;
         if (options.format.compact) {
